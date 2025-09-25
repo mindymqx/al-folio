@@ -177,6 +177,7 @@ exclude:
   - _pages/repositories.md
   - _pages/teaching.md
   - _pages/people.md
+  - _pages/dropdown.md
   - _pages/bookshelf.md
   - bin/
   - CONTRIBUTING.md
