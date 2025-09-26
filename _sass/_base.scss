@@ -908,6 +908,12 @@ code {
   padding: 3px 3px;
 }
 
+// 自定义样式：加粗并赋予主题色
+.highlight-theme {
+  color: var(--global-theme-color);
+  font-weight: bold;
+}
+
 // Transitioning Themes
 html.transition,
 html.transition *,
