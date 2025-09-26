@@ -713,11 +713,7 @@ footer.sticky-bottom {
   
   // 作者高亮样式
   .author em {
-    color: var(--global-theme-color);
-    font-weight: bold;
-    background-color: rgba(var(--global-theme-color-rgb), 0.1);
-    padding: 2px 4px;
-    border-radius: 3px;
+    text-decoration: underline;
   }
 
   h2 {
