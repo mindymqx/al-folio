@@ -710,6 +710,15 @@ footer.sticky-bottom {
     margin-top: 1em;
     margin-bottom: 1em;
   }
+  
+  // 作者高亮样式
+  .author em {
+    color: var(--global-theme-color);
+    font-weight: bold;
+    background-color: rgba(var(--global-theme-color-rgb), 0.1);
+    padding: 2px 4px;
+    border-radius: 3px;
+  }
 
   h2 {
     margin-bottom: 1rem;
