@@ -31,7 +31,7 @@ social: true # includes social icons at the bottom of the page
 
 Hello! I'm Mingqing (Mindy) Xu, an M.Phil student at the Hong Kong University of Science and Technology (Guangzhou) majored in [Computational Media and Arts (CMA)](https://cma.hkust-gz.edu.cn/). I am fortunate to be supervised by [Prof. Mingming Fan](https://www.mingmingfan.com/) and co-supervised by Prof. Muzhi ZHOU. 
 
-I obtained a bachelor’s degree in Industrial Design from South China University of Technology. 
+I obtained a bachelor’s degree in Industrial Design from South China University of Technology in 2023.
 
 My research interests lie at the intersection of technology and human well-being, with a focus on how emerging technologies such as `AI, AR, and VR` can support both `physical health and mental health`.
 
