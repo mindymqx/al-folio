@@ -33,7 +33,7 @@ Hello! I'm Mingqing (Mindy) Xu, an M.Phil student at the Hong Kong University of
 
 I obtained a bachelor’s degree in Industrial Design from South China University of Technology in 2023 under the supervision of Prof. Dan Liao.
 
-My research interests are centered on the intersection of technology and human well-being, with a particular emphasis on how emerging technologies such as <span class="highlight-theme">AI, AR, and VR</span> can support both  <span class="highlight-theme">physical health and mental health`</span>.
+My research interests are centered on the intersection of technology and human well-being, with a particular emphasis on how emerging technologies such as <span class="highlight-theme">AI, AR, and VR</span> can support both  <span class="highlight-theme">physical health and mental health</span>.
 
 
 
