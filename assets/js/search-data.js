@@ -18,7 +18,7 @@ ninja.data = [{
           },
         },{id: "nav-projects",
           title: "projects",
-          description: "A growing collection of your cool projects.",
+          description: "A growing collection of my projects.",
           section: "Navigation",
           handler: () => {
             window.location.href = "/al-folio/projects/";
@@ -46,24 +46,24 @@ ninja.data = [{
             },},{id: "news-a-simple-inline-announcement-with-markdown-emoji-sparkles-smile",
           title: 'A simple inline announcement with Markdown emoji! :sparkles: :smile:',
           description: "",
-          section: "News",},{id: "projects-childhood-time-vr-relaxation",
-          title: 'Childhood time VR relaxation',
+          section: "News",},{id: "projects-childhood-time-vr-relaxation-experience-design",
+          title: 'Childhood Time - VR Relaxation Experience Design',
           description: "with background image",
           section: "Projects",handler: () => {
               window.location.href = "/al-folio/projects/1_project/";
-            },},{id: "projects-herbal",
-          title: 'Herbal',
+            },},{id: "projects-herbal-product-system-design",
+          title: 'Herbal Product System Design',
           description: "Product and Service Design",
           section: "Projects",handler: () => {
               window.location.href = "/al-folio/projects/2_project/";
-            },},{id: "projects-windmill",
-          title: 'Windmill',
+            },},{id: "projects-windmill-nebuliser",
+          title: 'Windmill Nebuliser',
           description: "a project that redirects to another website",
           section: "Projects",handler: () => {
               window.location.href = "/al-folio/projects/3_project/";
-            },},{id: "projects-reminiscence-building-animation",
-          title: 'Reminiscence building animation',
-          description: "another without an image",
+            },},{id: "projects-",
+          title: '',
+          description: "",
           section: "Projects",handler: () => {
               window.location.href = "/al-folio/projects/4_project/";
             },},{id: "projects-mind-map",
