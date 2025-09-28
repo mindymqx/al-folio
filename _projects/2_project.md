@@ -1,6 +1,6 @@
 ---
 layout: page
-title: Herbal
+title: Herbal Product System Design
 description: Product and Service Design
 img: assets/img/3.jpg
 importance: 2

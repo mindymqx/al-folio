@@ -2,7 +2,7 @@
 layout: page
 title: Reminiscence building animation
 description: another without an image
-img:
+img:assets/img/7.jpg
 importance: 3
 category: digital art
 ---
