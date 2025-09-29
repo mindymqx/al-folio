@@ -61,9 +61,9 @@ ninja.data = [{
           description: "a project that redirects to another website",
           section: "Projects",handler: () => {
               window.location.href = "/al-folio/projects/3_project/";
-            },},{id: "projects-",
-          title: '',
-          description: "",
+            },},{id: "projects-loop-animation",
+          title: 'Loop Animation',
+          description: "procedual content generation, animation",
           section: "Projects",handler: () => {
               window.location.href = "/al-folio/projects/4_project/";
             },},{id: "projects-mind-map",
