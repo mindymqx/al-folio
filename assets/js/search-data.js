@@ -46,19 +46,19 @@ ninja.data = [{
             },},{id: "news-a-simple-inline-announcement-with-markdown-emoji-sparkles-smile",
           title: 'A simple inline announcement with Markdown emoji! :sparkles: :smile:',
           description: "",
-          section: "News",},{id: "projects-childhood-time-vr-relaxation-experience-design",
-          title: 'Childhood Time - VR Relaxation Experience Design',
-          description: "with background image",
+          section: "News",},{id: "projects-childhood-time",
+          title: 'Childhood Time',
+          description: "VR Relaxation Experience Design",
           section: "Projects",handler: () => {
               window.location.href = "/al-folio/projects/1_project/";
-            },},{id: "projects-herbal-product-system-design",
-          title: 'Herbal Product System Design',
-          description: "Product and Service Design",
+            },},{id: "projects-herbal-product-service-design",
+          title: 'Herbal Product Service Design',
+          description: "Product design, service design, UI/UX design",
           section: "Projects",handler: () => {
               window.location.href = "/al-folio/projects/2_project/";
             },},{id: "projects-windmill-nebuliser",
           title: 'Windmill Nebuliser',
-          description: "a project that redirects to another website",
+          description: "product design, industrial design",
           section: "Projects",handler: () => {
               window.location.href = "/al-folio/projects/3_project/";
             },},{id: "projects-loop-animation",
@@ -66,14 +66,14 @@ ninja.data = [{
           description: "procedual content generation, animation",
           section: "Projects",handler: () => {
               window.location.href = "/al-folio/projects/4_project/";
-            },},{id: "projects-mind-map",
-          title: 'Mind Map',
-          description: "a project with a background image",
+            },},{id: "projects-mind-resonator",
+          title: 'Mind Resonator',
+          description: "interactive installation, EEG sensor",
           section: "Projects",handler: () => {
               window.location.href = "/al-folio/projects/5_project/";
-            },},{id: "projects-virus",
-          title: 'Virus',
-          description: "a project with no image",
+            },},{id: "projects-little-virus",
+          title: 'Little Virus',
+          description: "generative art, creative coding",
           section: "Projects",handler: () => {
               window.location.href = "/al-folio/projects/6_project/";
             },},{

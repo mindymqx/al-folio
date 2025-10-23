@@ -1,0 +1,1 @@
+class DNA{constructor(e){this.genes=[];for(let s=0;s<e;s++)this.genes[s]=random(1)}crossover(e){let s=new DNA(this.genes.length);for(let n=0;n<this.genes.length;n++)random(1)>.5?s.genes[n]=this.genes[n]:s.genes[n]=e.genes[n];return s}mutate(e){for(let s=0;s<this.genes.length;s++)random(1)<e&&(this.genes[s]=random(1))}}
