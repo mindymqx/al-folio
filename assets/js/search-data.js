@@ -7,34 +7,34 @@ ninja.data = [{
     title: "about",
     section: "Navigation",
     handler: () => {
-      window.location.href = "/al-folio/";
+      window.location.href = "/";
     },
   },{id: "nav-publications",
           title: "publications",
           description: "",
           section: "Navigation",
           handler: () => {
-            window.location.href = "/al-folio/publications/";
+            window.location.href = "/publications/";
           },
         },{id: "nav-projects",
           title: "projects",
           description: "A growing collection of my projects.",
           section: "Navigation",
           handler: () => {
-            window.location.href = "/al-folio/projects/";
+            window.location.href = "/projects/";
           },
         },{id: "nav-cv",
           title: "cv",
           description: "This is a description of the page. You can modify it in &#39;_pages/cv.md&#39;. You can also change or remove the top pdf download button.",
           section: "Navigation",
           handler: () => {
-            window.location.href = "/al-folio/cv/";
+            window.location.href = "/cv/";
           },
         },{id: "books-the-godfather",
           title: 'The Godfather',
           description: "",
           section: "Books",handler: () => {
-              window.location.href = "/al-folio/books/the_godfather/";
+              window.location.href = "/books/the_godfather/";
             },},{id: "news-a-simple-inline-announcement",
           title: 'A simple inline announcement.',
           description: "",
@@ -42,7 +42,7 @@ ninja.data = [{
           title: 'A long announcement with details',
           description: "",
           section: "News",handler: () => {
-              window.location.href = "/al-folio/news/announcement_2/";
+              window.location.href = "/news/announcement_2/";
             },},{id: "news-a-simple-inline-announcement-with-markdown-emoji-sparkles-smile",
           title: 'A simple inline announcement with Markdown emoji! :sparkles: :smile:',
           description: "",
@@ -50,32 +50,32 @@ ninja.data = [{
           title: 'Childhood Time - VR Relaxation Experience Design',
           description: "with background image",
           section: "Projects",handler: () => {
-              window.location.href = "/al-folio/projects/1_project/";
+              window.location.href = "/projects/1_project/";
             },},{id: "projects-herbal-product-system-design",
           title: 'Herbal Product System Design',
           description: "Product and Service Design",
           section: "Projects",handler: () => {
-              window.location.href = "/al-folio/projects/2_project/";
+              window.location.href = "/projects/2_project/";
             },},{id: "projects-windmill-nebuliser",
           title: 'Windmill Nebuliser',
           description: "a project that redirects to another website",
           section: "Projects",handler: () => {
-              window.location.href = "/al-folio/projects/3_project/";
-            },},{id: "projects-loop-animation",
-          title: 'Loop Animation',
-          description: "procedual content generation, animation",
-          section: "Projects",handler: () => {
-              window.location.href = "/al-folio/projects/4_project/";
+              window.location.href = "/projects/3_project/";
             },},{id: "projects-mind-map",
           title: 'Mind Map',
           description: "a project with a background image",
           section: "Projects",handler: () => {
-              window.location.href = "/al-folio/projects/5_project/";
+              window.location.href = "/projects/4_project/";
+            },},{id: "projects-loop-animation",
+          title: 'Loop Animation',
+          description: "procedual content generation, animation",
+          section: "Projects",handler: () => {
+              window.location.href = "/projects/5_project/";
             },},{id: "projects-virus",
           title: 'Virus',
           description: "a project with no image",
           section: "Projects",handler: () => {
-              window.location.href = "/al-folio/projects/6_project/";
+              window.location.href = "/projects/6_project/";
             },},{
       id: 'light-theme',
       title: 'Change theme to light',
