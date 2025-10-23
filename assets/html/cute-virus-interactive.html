@@ -1,0 +1,469 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Cute Virus Interactive</title>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/p5.js/1.7.0/p5.min.js"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.6.0/css/all.min.css">
+    <style>
+        body {
+            margin: 0;
+            padding: 20px;
+            background: linear-gradient(135deg, #000000 0%, #000000 50%, #000000 100%);
+            font-family: 'Arial', sans-serif;
+            color: white;
+            height: 100vh;
+            overflow: hidden;
+        }
+        
+        .container {
+            max-width: 1000px;
+            margin: 0 auto;
+            text-align: center;
+            height: calc(100vh - 40px);
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+        }
+        
+        #sketch-container {
+            margin: 20px 0;
+            border: 3px solid rgba(0, 0, 0, 0.2);
+            border-radius: 15px;
+            overflow: hidden;
+            background: rgba(0, 0, 0, 0.3);
+            backdrop-filter: blur(10px);
+            flex: 1;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+        
+        .controls {
+            margin: 20px 0;
+            display: flex;
+            justify-content: center;
+        }
+        
+        button {
+            background: linear-gradient(45deg, #ffffff, #ffffff);
+            border: none;
+            color: rgb(0, 0, 0);
+            padding: 12px 24px;
+            border-radius: 25px;
+            cursor: pointer;
+            font-size: 14px;
+            font-weight: bold;
+            transition: all 0.3s ease;
+            box-shadow: 0 4px 15px rgba(255, 255, 255, 0.397);
+        }
+        
+        button:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 6px 20px rgba(255, 255, 255, 0.4);
+        }
+        
+        .save-button {
+            position: fixed;
+            top: 20px;
+            right: 20px;
+            background: rgba(255, 255, 255, 0.1);
+            border: 1px solid rgba(255, 255, 255, 0.2);
+            padding: 10px;
+            border-radius: 50%;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            backdrop-filter: blur(10px);
+            z-index: 1000;
+            width: 40px;
+            height: 40px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+        
+        .save-button:hover {
+            background: rgba(255, 255, 255, 0.2);
+            transform: scale(1.1);
+        }
+        
+        .save-button i {
+            font-size: 16px;
+            color: white;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <div id="sketch-container">
+            <!-- p5.js sketch will be inserted here -->
+        </div>
+        
+        <div class="controls">
+            <button onclick="refreshVirus()">Regenerate Virus</button>
+        </div>
+    </div>
+    
+    <!-- 保存按钮 -->
+    <button class="save-button" onclick="saveCanvas()" title="Save Image">
+        <i class="fas fa-download"></i>
+    </button>
+
+    <!-- p5.js sketch -->
+    <script>
+        // 全局变量
+        let numOfFeatures;
+        let popmax;
+        let mutationRate;
+        let population;
+        let hashseed;
+        let minterseed;
+        
+        function setup() {
+            let canvas = createCanvas(1000, 1000);
+            canvas.parent('sketch-container');
+            
+            colorMode(HSB);
+            angleMode(DEGREES);
+            
+            // 设置随机种子
+            hashseed = int(randomSeed() * 100000000);
+            minterseed = int(random() * 100000000);
+            randomSeed(hashseed);
+            noiseSeed(hashseed);
+            
+            popmax = 1; // 显示1个病毒
+            mutationRate = 0.03;
+            numOfFeatures = 15;
+            
+            // 创建种群
+            population = new Population(numOfFeatures, mutationRate, popmax);
+        }
+        
+        function draw() {
+            background(0);
+            translate(width / 2, height / 2);
+            scale(map(width, 0, 1920, 0, 6));
+            
+            population.draw();
+        }
+        
+        function windowResized() {
+            resizeCanvas(1000, 1000);
+        }
+        
+        // 刷新病毒形态
+        function refreshVirus() {
+            // 生成新的随机种子
+            hashseed = int(random() * 100000000);
+            minterseed = int(random() * 100000000);
+            randomSeed(hashseed);
+            noiseSeed(hashseed);
+            
+            // 重新创建种群
+            population = new Population(numOfFeatures, mutationRate, popmax);
+            
+            console.log("🔄 病毒形态已刷新！新的随机种子:", hashseed);
+        }
+        
+        // 保存canvas图像
+        function saveCanvas() {
+            // 获取当前canvas
+            let canvas = document.querySelector('canvas');
+            if (canvas) {
+                // 创建下载链接
+                let link = document.createElement('a');
+                link.download = 'virus_' + Date.now() + '.png';
+                link.href = canvas.toDataURL('image/png');
+                
+                // 触发下载
+                document.body.appendChild(link);
+                link.click();
+                document.body.removeChild(link);
+                
+                console.log("💾 图像已保存！");
+            } else {
+                console.log("❌ 未找到canvas元素");
+            }
+        }
+    </script>
+    
+    <!-- 包含你的JavaScript类文件 -->
+    <script>
+        // DNA类
+        class DNA {
+            constructor(num) {
+                this.genes = [];
+                for (let i = 0; i < num; i++) {
+                    this.genes[i] = random(1);
+                }
+            }
+            
+            crossover(partner) {
+                let child = new DNA(this.genes.length);
+                for (let i = 0; i < this.genes.length; i++) {
+                    if (random(1) > 0.5) child.genes[i] = this.genes[i];
+                    else child.genes[i] = partner.genes[i];
+                }
+                return child;
+            }
+            
+            mutate(mutationRate) {
+                for (let i = 0; i < this.genes.length; i++) {
+                    if (random(1) < mutationRate) {
+                        this.genes[i] = random(1);
+                    }
+                }
+            }
+        }
+        
+        // Individual类
+        class Individual {
+            constructor(dna, ID) {
+                this.dna = dna;
+                this.fitness = 1;
+                this.ID = ID;
+                this.calcPhenotype();
+            }
+            
+            calcPhenotype() {
+                this.mm = map(this.dna.genes[0], 0, 1, 0, 20);
+                this.m = 2 * round(this.mm);
+                this.n1 = map(this.dna.genes[1], 0, 1, 7, 10);
+                this.n2 = map(this.dna.genes[2], 0, 1, 0, 10);
+                this.n3 = map(this.dna.genes[3], 0, 1, 0, 10);
+                this.ab = map(this.dna.genes[4], 0, 1, 1, 2);
+                this.Hue = map(this.dna.genes[5], 0, 1, 0, 360);
+                this.eyeNumm = map(this.dna.genes[6], 0, 1, 1, 4);
+                this.eyeNum = floor(this.eyeNumm);
+                this.eyeAnglee = map(this.dna.genes[7], 0, 1, 0, 360);
+                this.eyeAngle = parseFloat(this.eyeAnglee.toFixed(1));
+                this.eyeR = this.dna.genes[8];
+                this.eyeSize = map(this.dna.genes[9], 0, 1, 20, 30);
+                this.virusStroke = map(this.dna.genes[10], 0, 1, 1, 4);
+                this.hairNumm = map(this.dna.genes[11], 0, 1, 10, 50);
+                this.hairNum = floor(this.hairNumm);
+                this.hairLength = map(this.dna.genes[12], 0, 1, 0.1, 0.5);
+                this.vibrancy = map(this.dna.genes[13], 0, 1, 50, 1200);
+                this.frecklesNum = map(this.dna.genes[14], 0, 1, 5, 50);
+            }
+            
+            r(theta, a, b, m, n1, n2, n3) {
+                return pow(
+                    pow(abs(cos((m * theta) / 4.0) / a), n2) +
+                    pow(abs(sin((m * theta) / 4.0) / b), n3),
+                    -1 / n1
+                );
+            }
+            
+            organism() {
+                push();
+                randomSeed(hashseed);
+                noiseSeed(hashseed);
+                strokeWeight(this.virusStroke);
+
+                // 绘制超级公式主体
+                if (this.Hue > 180) {
+                    this.strokeHue = this.Hue - 180;
+                } else {
+                    this.strokeHue = this.Hue + 180;
+                }
+                stroke(this.strokeHue, 100, 100);
+                fill(this.Hue, 80, 80);
+                beginShape();
+
+                for (let theta = 0; theta <= 360; theta += 0.1) {
+                    let rad = this.r(
+                        theta,
+                        this.ab,
+                        this.ab,
+                        this.m,
+                        this.n1,
+                        this.n2,
+                        this.n3
+                    );
+                    if (theta > 180) {
+                        this.vibrancyAngle = theta;
+                    } else {
+                        this.vibrancyAngle = 360 - theta;
+                    }
+                    this.noiseLevel = noise(
+                        this.vibrancyAngle / 400,
+                        frameCount / this.vibrancy
+                    );
+                    let x = rad * cos(theta) * 50 * this.noiseLevel;
+                    let y = rad * sin(theta) * 50 * this.noiseLevel;
+                    vertex(x, y);
+                }
+                endShape(CLOSE);
+
+                this.hair();
+                this.freckles();
+                this.eye();
+                pop();
+            }
+
+            hair() {
+                push();
+                stroke(this.strokeHue, 100, 100);
+                strokeWeight(random(1, 3));
+
+                for (var theta = 0; theta < 360; theta += 360 / this.hairNum) {
+                    if (theta > 180) {
+                        this.vibrancyAngle = theta;
+                    } else {
+                        this.vibrancyAngle = 360 - theta;
+                    }
+                    this.noiseLevel = noise(
+                        this.vibrancyAngle / 400,
+                        frameCount / this.vibrancy
+                    );
+
+                    let hLength = random(this.hairLength - 0.1, this.hairLength + 0.3);
+                    let hairX1 =
+                        this.r(theta, this.ab, this.ab, this.m, this.n1, this.n2, this.n3) *
+                        cos(theta) *
+                        50 *
+                        this.noiseLevel;
+                    let hairY1 =
+                        this.r(theta, this.ab, this.ab, this.m, this.n1, this.n2, this.n3) *
+                        sin(theta) *
+                        50 *
+                        this.noiseLevel;
+                    let hairX2 =
+                        (hLength + 1) *
+                        this.r(theta, this.ab, this.ab, this.m, this.n1, this.n2, this.n3) *
+                        cos(theta) *
+                        50 *
+                        this.noiseLevel;
+                    let hairY2 =
+                        (hLength + 1) *
+                        this.r(theta, this.ab, this.ab, this.m, this.n1, this.n2, this.n3) *
+                        sin(theta) *
+                        50 *
+                        this.noiseLevel;
+                    curve(
+                        hairX1 - random(5, 15),
+                        hairY1 - random(5, 15),
+                        hairX1,
+                        hairY1,
+                        hairX2,
+                        hairY2,
+                        hairX2 + random(5, 15),
+                        hairY2 + random(5, 15)
+                    );
+                }
+                pop();
+            }
+            
+            freckles() {
+                for (var i = 0; i < this.frecklesNum; i++) {
+                    fill(this.strokeHue, 60, 60, random(0.3, 0.7));
+                    noStroke();
+                    circle(random(-40, 40) * this.noiseLevel, random(-40, 40) * this.noiseLevel, random(1, 10) * this.noiseLevel);
+                }
+            }
+
+            eye() {
+                for (var i = 0; i < this.eyeNum; i++) {
+                    let eyeX =
+                        (this.eyeR - random(1)) *
+                        this.r(
+                            this.eyeAngle + i * 90,
+                            this.ab,
+                            this.ab,
+                            this.m,
+                            this.n1,
+                            this.n2,
+                            this.n3
+                        ) *
+                        cos(this.eyeAngle + i * 90) *
+                        50 *
+                        this.noiseLevel;
+                    let eyeY =
+                        (this.eyeR - random(1)) *
+                        this.r(
+                            this.eyeAngle + i * 90,
+                            this.ab,
+                            this.ab,
+                            this.m,
+                            this.n1,
+                            this.n2,
+                            this.n3
+                        ) *
+                        sin(this.eyeAngle + i * 90) *
+                        50 *
+                        this.noiseLevel;
+                    noStroke();
+                    fill(255);
+                    let R = this.eyeSize + random(3);
+                    let eyeDirection = random(360) * this.noiseLevel;
+                    circle(eyeX, eyeY, R * this.noiseLevel);
+                    fill(this.strokeHue, 80, 80);
+                    circle(
+                        eyeX + (R / 4) * cos(eyeDirection) * this.noiseLevel,
+                        eyeY + (R / 4) * sin(eyeDirection) * this.noiseLevel,
+                        (R / 2) * this.noiseLevel
+                    );
+                }
+            }
+
+            draw() {
+                push();
+                this.organism();
+                pop();
+            }
+        }
+        
+        // Population类
+        class Population {
+            constructor(numOfGenes, m, num) {
+                this.population = [];
+                this.matingPool = [];
+                this.generations = 0;
+                this.mutationRate = m;
+                this.numOfGenes = numOfGenes;
+                this.showInfo = false;
+                
+                for (let i = 0; i < num; i++) {
+                    let dna = new DNA(this.numOfGenes);
+                    this.population[i] = new Individual(dna, i);
+                }
+                this.matingPool = [];
+            }
+            
+            // 简化的方法 - 主要用于显示
+            selection() {
+                // 简化版本，主要用于显示
+                console.log("选择过程已简化");
+            }
+            
+            generate() {
+                // 简化版本，主要用于显示
+                console.log("生成过程已简化");
+            }
+            
+            draw() {
+                for (let i = 0; i < this.population.length; i++) {
+                    push();
+                    // 单个细菌居中显示，不需要偏移
+                    this.population[i].draw();
+                    pop();
+                }
+            }
+            
+            // 简化的调试方法
+            debug() {
+                console.log("当前显示", this.population.length, "个病毒");
+            }
+            
+            // 简化的点击处理 - 仅用于显示
+            handleClick(x, y) {
+                // 可以在这里添加简单的点击反馈，但不影响进化
+                console.log("点击位置:", x, y);
+            }
+        }
+    </script>
+</body>
+</html>

@@ -1,10 +1,10 @@
 ---
 layout: page
 title: Windmill Nebuliser
-description: a project that redirects to another website
-img: assets/img/7.jpg
-redirect: https://unsplash.com
-importance: 3
+description: product design, industrial design
+img: assets/img/windmillteaser.png
+# redirect: https://unsplash.com
+importance: 6
 category: design
 ---
 

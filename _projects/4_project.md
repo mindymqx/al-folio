@@ -3,7 +3,7 @@ layout: page
 title: Loop Animation
 description: procedual content generation, animation
 img: assets/img/teaser.png
-importance: 3
+importance: 2
 category: digital art
 ---
 

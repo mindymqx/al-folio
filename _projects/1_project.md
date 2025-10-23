@@ -1,9 +1,9 @@
 ---
 layout: page
-title: Childhood Time - VR Relaxation Experience Design
-description: with background image
-img: assets/img/12.jpg
-importance: 1
+title: Childhood Time
+description: VR Relaxation Experience Design
+img: assets/img/childhoodteaser.png
+importance: 4
 category: design
 related_publications:
 ---

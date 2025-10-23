@@ -1,9 +1,9 @@
 ---
 layout: page
-title: Herbal Product System Design
-description: Product and Service Design
-img: assets/img/3.jpg
-importance: 2
+title: Herbal Product Service Design
+description: Product design, service design, UI/UX design
+img: assets/img/herbal.png
+importance: 5
 category: design
 giscus_comments: true
 ---

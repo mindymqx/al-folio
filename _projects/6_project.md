@@ -1,9 +1,9 @@
 ---
 layout: page
-title: Virus
-description: a project with no image
-img:
-importance: 4
+title: Little Virus
+description: generative art, creative coding
+img: assets/img/virusteaser.png
+importance: 3
 category: digital art
 ---
 
@@ -20,61 +20,73 @@ To give your project a background in the portfolio page, just add the img tag to
     img: /assets/img/12.jpg
     ---
 
-<div class="row">
-    <div class="col-sm mt-3 mt-md-0">
-        {% include figure.liquid loading="eager" path="assets/img/1.jpg" title="example image" class="img-fluid rounded z-depth-1" %}
-    </div>
-    <div class="col-sm mt-3 mt-md-0">
-        {% include figure.liquid loading="eager" path="assets/img/3.jpg" title="example image" class="img-fluid rounded z-depth-1" %}
-    </div>
-    <div class="col-sm mt-3 mt-md-0">
-        {% include figure.liquid loading="eager" path="assets/img/5.jpg" title="example image" class="img-fluid rounded z-depth-1" %}
+## Interactive Experience
+
+This project is a generative art installation that creates unique virus forms through randomized genetic algorithms. Users can generate new virus morphologies with a single click, exploring the infinite possibilities of digital organism design through the intersection of art, biology, and computation.
+
+<div class="row justify-content-center">
+    <div class="col-sm-12 mt-3 mt-md-0">
+        <iframe 
+            src="{{ '/assets/html/cute-virus-interactive.html' | relative_url }}" 
+            width="100%" 
+            height="700" 
+            frameborder="0" 
+            style="border-radius: 15px; box-shadow: 0 8px 32px rgba(0,0,0,0.3);">
+        </iframe>
     </div>
 </div>
 <div class="caption">
-    Caption photos easily. On the left, a road goes through a tunnel. Middle, leaves artistically fall in a hipster photoshoot. Right, in another hipster photoshoot, a lumberjack grasps a handful of pine needles.
-</div>
-<div class="row">
-    <div class="col-sm mt-3 mt-md-0">
-        {% include figure.liquid loading="eager" path="assets/img/5.jpg" title="example image" class="img-fluid rounded z-depth-1" %}
-    </div>
-</div>
-<div class="caption">
-    This image can also have a caption. It's like magic.
+    Interactive Generative Art - Click the button to generate new random virus morphologies. Save the image through the button on the top-right.
 </div>
 
-You can also put regular text between your rows of images.
-Say you wanted to write a little bit about your project before you posted the rest of the images.
-You describe how you toiled, sweated, _bled_ for your project, and then... you reveal its glory in the next row of images.
+## Technical Implementation
 
-<div class="row justify-content-sm-center">
-    <div class="col-sm-8 mt-3 mt-md-0">
-        {% include figure.liquid path="assets/img/6.jpg" title="example image" class="img-fluid rounded z-depth-1" %}
-    </div>
-    <div class="col-sm-4 mt-3 mt-md-0">
-        {% include figure.liquid path="assets/img/11.jpg" title="example image" class="img-fluid rounded z-depth-1" %}
-    </div>
-</div>
-<div class="caption">
-    You can also have artistically styled 2/3 + 1/3 images, like these.
-</div>
+This project combines several advanced computational concepts:
 
-The code is simple.
-Just wrap your images with `<div class="col-sm">` and place them inside `<div class="row">` (read more about the <a href="https://getbootstrap.com/docs/4.4/layout/grid/">Bootstrap Grid</a> system).
-To make images responsive, add `img-fluid` class to each; for rounded corners and shadows use `rounded` and `z-depth-1` classes.
-Here's the code for the last row of images above:
+### Genetic Algorithm Framework
+- **DNA Encoding**: Each virus is represented by a 15-gene chromosome
+- **Random Generation**: New random seeds create unique morphologies
+- **Superformula Mathematics**: Organic shape generation using mathematical formulas
+- **Visual Diversity**: Each refresh creates completely different forms
 
-{% raw %}
-
-```html
-<div class="row justify-content-sm-center">
-  <div class="col-sm-8 mt-3 mt-md-0">
-    {% include figure.liquid path="assets/img/6.jpg" title="example image" class="img-fluid rounded z-depth-1" %}
-  </div>
-  <div class="col-sm-4 mt-3 mt-md-0">
-    {% include figure.liquid path="assets/img/11.jpg" title="example image" class="img-fluid rounded z-depth-1" %}
-  </div>
-</div>
+### Mathematical Foundation
+The virus shapes are generated using the **Superformula**:
+```
+r(θ) = (|cos(mθ/4)/a|^n2 + |sin(mθ/4)/b|^n3)^(-1/n1)
 ```
 
-{% endraw %}
+### Interactive Features
+- **One-Click Generation**: Single button creates new random forms
+- **Instant Refresh**: Immediate visual feedback with new morphologies
+- **Infinite Variety**: Each generation is completely unique
+- **Simplified Interface**: Focus on visual exploration rather than complex controls
+
+## Key Features
+
+- **🧬 Genetic Diversity**: Each virus has unique genetic traits
+- **🎨 Visual Variety**: Completely different shapes and colors each refresh
+- **🖱️ One-Click Interaction**: Simple button generates new forms
+- **🔄 Instant Refresh**: Immediate new morphologies
+- **♾️ Infinite Possibilities**: Endless variety of virus designs
+
+## Design Philosophy
+
+This project explores the intersection of **generative art**, **mathematical beauty**, and **simplified interaction**. By providing a single button interface, it focuses user attention on the visual exploration of infinite morphological possibilities rather than complex controls.
+
+The "cute" aesthetic subverts traditional representations of viruses, transforming potentially threatening biological entities into playful, interactive art objects that invite exploration and wonder at the infinite variety of mathematical form generation.
+
+## Development Process
+
+The project was developed using:
+- **p5.js** for creative coding and visualization
+- **Genetic Algorithm** implementation for evolutionary processes
+- **Superformula mathematics** for organic shape generation
+- **Interactive design** principles for user engagement
+
+## Future Enhancements
+
+- **Multi-species Evolution**: Multiple virus types competing
+- **Environmental Factors**: External influences on evolution
+- **Sound Integration**: Audio feedback for interactions
+- **Data Visualization**: Real-time genetic analysis
+- **Export Functionality**: Save evolved virus designs

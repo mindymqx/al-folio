@@ -1,9 +1,9 @@
 ---
 layout: page
-title: Mind Map
-description: a project with a background image
-img: assets/img/1.jpg
-importance: 3
+title: Mind Resonator
+description: interactive installation, EEG sensor
+img: assets/img/mindteaser.png
+importance: 1
 category: digital art
 ---
 
