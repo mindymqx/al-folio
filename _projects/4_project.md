@@ -7,10 +7,10 @@ importance: 2
 category: digital art
 ---
 
-Project Type: Individual project
+## Software
+Blender
 
-Software: Blender
-
+## Introduction
 This animation evokes a nostalgic and dreamlike atmosphere inspired by the urban landscapes of 2000s China. Its vivid colors and playful elements like plastic toys, balloons, and the iconic white buildings with blue glass recreate the visual language of that era. At the center is a fluffy toy rabbit leaping from behind the glass building. Yet through the rabbit’s eyes, the audience confronts a striking contrast: a darker, more realistic scene that disrupts the polished surface.
 
  This juxtaposition reflects how memory is often blurred and re-shaped, raising questions about the gap between recollection and reality.

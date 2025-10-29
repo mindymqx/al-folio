@@ -6,6 +6,7 @@ img: assets/img/herbal.png
 importance: 5
 category: design
 giscus_comments: true
+published: false
 ---
 
 Every project has a beautiful feature showcase page.
