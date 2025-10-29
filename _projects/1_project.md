@@ -8,9 +8,9 @@ category: design
 related_publications:
 ---
 
-Valley of Blossoms is a virtual reality experience designed around two key principles from psychology: **horticultural therapy** and **prosocial behavior**.
+Childhood Time is a virtual reality experience designed around two key principles from psychology: **horticultural therapy** and **prosocial behavior**.
 
-Inspired by the restorative power of nature, the experience places users in a carefully constructed natural environment called blooming valley. Within this tranquil space, users interact with Joy, a gentle child NPC who invites them to play, collaborate, and care for one another.
+Inspired by the restorative power of nature, the experience places users in a carefully constructed natural environment called Valley of Blossoms. Within this tranquil space, users interact with Joy, a gentle child NPC who invites them to play, collaborate, and care for one another.
 
 Through simple acts of mutual assistance like helping, sharing, and being relied upon, the experience draws from positive psychology, highlighting how empathy, connection, and being needed by others can foster emotional healing. Ultimately, Valley of Blossoms encourages players to rediscover comfort and meaning in small, caring interactions.
 
@@ -46,7 +46,7 @@ Through simple acts of mutual assistance like helping, sharing, and being relied
     <div class="col-sm mt-3 mt-md-0">
         {% include figure.liquid path="assets/img/child3.gif" title="VR Interaction Scene 3" %}
         <div class="caption">
-            User helps Joy by picking apples and receiving gifts in response to Joy's requests.
+            User helps Joy by picking apples in response to Joy's requests.
         </div>
     </div>
     <div class="col-sm mt-3 mt-md-0">
@@ -61,7 +61,7 @@ Through simple acts of mutual assistance like helping, sharing, and being relied
     <div class="col-sm-6 mt-3 mt-md-0">
         {% include figure.liquid path="assets/img/child5.gif" title="VR Interaction Scene 3" %}
         <div class="caption">
-            User receives joy's gratitude and gift.
+            User receives Joy's gratitude and gift.
         </div>
     </div>
 
