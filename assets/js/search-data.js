@@ -51,13 +51,8 @@ ninja.data = [{
           description: "VR Relaxation Experience Design",
           section: "Projects",handler: () => {
               window.location.href = "/al-folio/projects/1_project/";
-            },},{id: "projects-herbal-product-service-design",
-          title: 'Herbal Product Service Design',
-          description: "Product design, service design, UI/UX design",
-          section: "Projects",handler: () => {
-              window.location.href = "/al-folio/projects/2_project/";
-            },},{id: "projects-windmill-nebuliser",
-          title: 'Windmill Nebuliser',
+            },},{id: "projects-pinwheel-nebuliser",
+          title: 'Pinwheel Nebuliser',
           description: "product design, industrial design",
           section: "Projects",handler: () => {
               window.location.href = "/al-folio/projects/3_project/";
