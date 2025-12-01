@@ -1,10 +1,11 @@
 ---
 layout: page
 title: PosProjector
-description: interactive installation, EEG sensor
+description: camera-projector system
+
 img: assets/img/PosProjector.png
 importance: 1
-category: digital art
+category: design
 ---
 Anonymous authors
 (CHI26, Under Review)
@@ -18,7 +19,7 @@ Poor posture during desk-based learning activities can lead to many health issue
 ## Demo Video
 
 <div class="row justify-content-sm-center">
-    <div class="col-sm-8 mt-3 mt-md-0">
+    <div class="col-sm-10 mt-3 mt-md-0">
         {% include video.liquid path="assets/video/PosProjector.mp4" class="img-fluid rounded z-depth-1" preload="metadata" controls="true" %}
     </div>
 </div>
