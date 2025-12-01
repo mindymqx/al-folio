@@ -12,7 +12,7 @@ Childhood Time is a virtual reality experience designed around two key principle
 
 Inspired by the restorative power of nature, the experience places users in a carefully constructed natural environment called Valley of Blossoms. Within this tranquil space, users interact with Joy, a gentle child NPC who invites them to play, collaborate, and care for one another.
 
-Through simple acts of mutual assistance like helping, sharing, and being relied upon, the experience draws from positive psychology, highlighting how empathy, connection, and being needed by others can foster emotional healing. Ultimately, Valley of Blossoms encourages players to rediscover comfort and meaning in small, caring interactions.
+Through simple acts of mutual assistance like helping, sharing, and being relied upon, the experience draws from positive psychology, highlighting how empathy, connection, and being needed by others can foster emotional healing. Ultimately, Childhood Time encourages players to rediscover comfort and meaning in small, caring interactions.
 
 ## User Journey
 
