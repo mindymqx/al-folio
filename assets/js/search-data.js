@@ -64,6 +64,11 @@ ninja.data = [{
           description: "generative art, creative coding",
           section: "Projects",handler: () => {
               window.location.href = "/al-folio/projects/6_project/";
+            },},{id: "projects-posprojector",
+          title: 'PosProjector',
+          description: "interactive installation, EEG sensor",
+          section: "Projects",handler: () => {
+              window.location.href = "/al-folio/projects/7_project/";
             },},{
       id: 'light-theme',
       title: 'Change theme to light',
