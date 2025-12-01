@@ -66,7 +66,7 @@ ninja.data = [{
               window.location.href = "/al-folio/projects/6_project/";
             },},{id: "projects-posprojector",
           title: 'PosProjector',
-          description: "interactive installation, EEG sensor",
+          description: "camera-projector system",
           section: "Projects",handler: () => {
               window.location.href = "/al-folio/projects/7_project/";
             },},{
