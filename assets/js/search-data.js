@@ -28,16 +28,8 @@ ninja.data = [{
           description: "",
           section: "Books",handler: () => {
               window.location.href = "/al-folio/books/the_godfather/";
-            },},{id: "news-a-simple-inline-announcement",
-          title: 'A simple inline announcement.',
-          description: "",
-          section: "News",},{id: "news-a-long-announcement-with-details",
-          title: 'A long announcement with details',
-          description: "",
-          section: "News",handler: () => {
-              window.location.href = "/al-folio/news/announcement_2/";
-            },},{id: "news-a-simple-inline-announcement-with-markdown-emoji-sparkles-smile",
-          title: 'A simple inline announcement with Markdown emoji! :sparkles: :smile:',
+            },},{id: "news-two-papers-got-conditionally-accepted-by-chi-2026-a-big-thank-you-and-congrats-to-my-collaboraters",
+          title: 'Two papers got conditionally accepted by CHI 2026. A big thank you and...',
           description: "",
           section: "News",},{id: "projects-childhood-time",
           title: 'Childhood Time',
