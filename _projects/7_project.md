@@ -7,8 +7,7 @@ img: assets/img/PosProjector.png
 importance: 1
 category: design
 ---
-Anonymous authors
-(CHI26, Under Review)
+Mingqing Xu, Zhongyue Zhang, Zhiyuan Xia, Chao Liu, and Mingming Fan (In CHI26)
 
 
 ## Abstract
