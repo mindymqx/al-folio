@@ -28,8 +28,8 @@ ninja.data = [{
           description: "",
           section: "Books",handler: () => {
               window.location.href = "/al-folio/books/the_godfather/";
-            },},{id: "news-two-papers-got-conditionally-accepted-by-chi-2026-a-big-thank-you-and-congrats-to-my-collaboraters",
-          title: 'Two papers got conditionally accepted by CHI 2026. A big thank you and...',
+            },},{id: "news-two-papers-were-conditionally-accepted-by-chi-2026-a-big-thank-you-and-congrats-to-my-collaboraters",
+          title: 'Two papers were conditionally accepted by CHI 2026. A big thank you and...',
           description: "",
           section: "News",},{id: "projects-childhood-time",
           title: 'Childhood Time',
