@@ -23,6 +23,13 @@ ninja.data = [{
           handler: () => {
             window.location.href = "/al-folio/projects/";
           },
+        },{id: "nav-cv",
+          title: "CV",
+          description: "Download my curriculum vitae (PDF).",
+          section: "Navigation",
+          handler: () => {
+            window.location.href = "/al-folio/cv/";
+          },
         },{id: "books-the-godfather",
           title: 'The Godfather',
           description: "",
