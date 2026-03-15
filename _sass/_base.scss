@@ -676,6 +676,17 @@ footer.sticky-bottom {
     img {
       width: 100%;
     }
+
+    .card-img-top,
+    .card-img {
+      filter: brightness(0.5);
+      transition: filter 0.3s ease;
+    }
+
+    &:hover .card-img-top,
+    &:hover .card-img {
+      filter: brightness(1);
+    }
   }
 
   .col {
